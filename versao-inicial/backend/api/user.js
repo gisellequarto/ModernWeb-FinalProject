@@ -58,10 +58,9 @@ module.exports = app => {
             .then(users => res.json(users))
             .catch(err => res.status(500).send(err))
     }
-
-    /*
-    Só como desafio... não será usado neste projeto
-    const getById = (req, res) => {
+    
+    //Só como desafio... não será usado neste projeto
+    /* const getById = (req, res) => {
         app.db('users')
             .select('id', 'name', 'email', 'admin')
             .where({ id: req.params.id })
