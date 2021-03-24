@@ -116,13 +116,17 @@ module.exports = app => {
             parentNode.children = toTree(categories, categories.filter(isChild));
             return parentNode;
         })
-        return tree
+        return tree;
     }
 
 
+    const getTree = (req, res) => {
+        app.db('categories')
+            .then(categories => res.json(toTree(categories)))
+            .catch(err => res.status(500).send(err))
+    }
 
 
-
-    return { save, remove, get, getById }
+    return { save, remove, get, getById, getTree }
 
 }
