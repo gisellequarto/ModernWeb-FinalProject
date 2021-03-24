@@ -12,6 +12,14 @@ module.exports = app => {
         .post(app.api.category.save);
         //.all(app.config.passport.authenticate())
     
+     // Cuidado com ordem! Tem que vir antes de /categories/:id
+     // Para tree não ser interpretado como um id
+    app.route('/categories/tree')
+        //.all(app.config.passport.authenticate())
+        .get(app.api.category.getTree)
+
+
+
     app.route('/categories/:id')
         .get(app.api.category.getById)
         .put(app.api.category.save)
@@ -19,7 +27,7 @@ module.exports = app => {
         //.all(app.config.passport.authenticate())
 
     
-    
+
 
 
 
