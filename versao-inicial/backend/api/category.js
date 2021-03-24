@@ -9,7 +9,7 @@ module.exports = app => {
         }
 
         if (req.params.id) {
-            category.id = req.params.id 
+            category.id = req.params.id;
         }
 
         try {
@@ -51,36 +51,43 @@ module.exports = app => {
             res.status(204).send();
             
         } catch(msg) {
-            res.status(400).send(msg)
+            res.status(400).send(msg);
         }
     }
 
 
     const withPath = categories => {
         const getParent = (categories, parentId) => {
-            const parent = categories.filter(parent => parent.id === parentId)
-            return parent.length ? parent[0] : null
+            const parent = categories.filter(parent => parent.id === parentId);
+            
+            return parent.length ? parent[0] : null;
         }
 
         const categoriesWithPath = categories.map(category => {
-            let path = category.name
-            let parent = getParent(categories, category.parentId)
+            let path = category.name;
+            let parent = getParent(categories, category.parentId);
 
             while(parent) {
-                path = `${parent.name} > ${path}`
-                parent = getParent(categories, parent.parentId)
+                path = `${parent.name} > ${path}`;
+                parent = getParent(categories, parent.parentId);
             }
 
             return { ...category, path }
         })
 
         categoriesWithPath.sort((a, b) => {
-            if(a.path < b.path) return -1
-            if(a.path > b.path) return 1
-            return 0
+            if(a.path < b.path) {
+                return -1;
+            }
+            
+            if(a.path > b.path) {
+                return 1;
+            }
+
+            return 0;
         })
 
-        return categoriesWithPath
+        return categoriesWithPath;
     }
 
 
@@ -99,6 +106,23 @@ module.exports = app => {
             .catch(err => res.status(500).send(err))
     }
 
+    const toTree = (categories, tree) => {
+        if(!tree) {
+            tree = categories.filter(c => !c.parentId);
+        }
 
-    
+        tree = tree.map(parentNode => {
+            const isChild = node => node.parentId == parentNode.id;
+            parentNode.children = toTree(categories, categories.filter(isChild));
+            return parentNode;
+        })
+        return tree
+    }
+
+
+
+
+
+    return { save, remove, get, getById }
+
 }
