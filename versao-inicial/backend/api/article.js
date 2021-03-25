@@ -1,7 +1,7 @@
-const queries = require('./queries')
+const queries = require('./queries');
 
 module.exports = app => {
-    const { existsOrError } = app.api.validation
+    const { existsOrError } = app.api.validation;
 
     const save = (req, res) => {
         const article = { ...req.body }
@@ -78,10 +78,10 @@ module.exports = app => {
     }
 
     const getByCategory = async (req, res) => {
-        const categoryId = req.params.id
-        const page = req.query.page || 1
-        const categories = await app.db.raw(queries.categoryWithChildren, categoryId)
-        const ids = categories.rows.map(c => c.id)
+        const categoryId = req.params.id;
+        const page = req.query.page || 1;
+        const categories = await app.db.raw(queries.categoryWithChildren, categoryId);
+        const ids = categories.rows.map(c => c.id);
 
         //consultando duas tabelas usando alias
         //whereRaw e whereIn ler doc do knex... bem explicado
@@ -94,7 +94,6 @@ module.exports = app => {
             .then(articles => res.json(articles))
             .catch(err => res.status(500).send(err))
     }
-
 
 
     return { save, remove, get, getById, getByCategory }
