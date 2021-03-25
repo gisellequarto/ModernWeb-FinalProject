@@ -25,7 +25,26 @@ module.exports = app => {
             return res.status(401).send('Email/Senha inválidos!')
         }
 
+        // pegar a data atual date.now() retorna os milisegundos desde 1/1/1970. Dividindo por mil, vc pega o segundo atual
+        // isso para vc dizer quanto tempo será válido o token
+        const now = Math.floor(Date.now() / 1000)
 
+
+        //iat = issued at
+        // expiração... vc calcula o quanto de tempo o usúário permanece logado, mesmo que feche o browser (deixei um dia neste caso)
+        const payload = {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            admin: user.admin,
+            iat: now,
+            exp: now + (60 * 60 * 24)
+        }
+
+        res.json({
+            ...payload,
+            token: jwt.encode(payload, authSecret)
+        })
 
     }
 
