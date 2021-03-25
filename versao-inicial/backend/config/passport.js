@@ -1,12 +1,13 @@
-const { authSecret } = require('../.env');
-const passport = require('passport');
-const passportJwt = require('passport-jwt');
-const { Strategy, ExtractJwt } = passportJwt;
+const { authSecret } = require('../.env')
+const passport = require('passport')
+const passportJwt = require('passport-jwt')
+const { Strategy, ExtractJwt } = passportJwt
 
 module.exports = app => {
+    
+    //extrai o token do header da requisição (linha 11)
     const params = {
         secretOrKey: authSecret,
-        //extrai o token do header da requisição
         jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
     }
 
@@ -23,6 +24,5 @@ module.exports = app => {
     return {
         authenticate: () => passport.authenticate('jwt', { session: false })
     }
-
 
 }
