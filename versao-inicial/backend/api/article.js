@@ -82,6 +82,7 @@ module.exports = app => {
         const ids = categories.rows.map(c => c.id)
 
         //consultando duas tabelas usando alias
+        //whereRaw e whereIn ler doc do knex... bem explicado
         app.db({a: 'articles', u: 'users'})
             .select('a.id', 'a.name', 'a.description', 'a.imageUrl', { author: 'u.name' })
             .limit(limit).offset(page * limit - limit)
