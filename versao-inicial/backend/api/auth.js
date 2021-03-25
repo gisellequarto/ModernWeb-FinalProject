@@ -66,16 +66,7 @@ module.exports = app => {
         res.send(false)
     }
 
-
-
-
-
-
-
-
-
     
-    
-    return { signin }
+    return { signin, validateToken }
 
 }
