@@ -45,10 +45,26 @@ module.exports = app => {
             ...payload,
             token: jwt.encode(payload, authSecret)
         })
-
     }
 
 
+    const validateToken = async (req, res) => {
+        const userData = req.body || null
+        try {
+            if(userData) {
+                const token = jwt.decode(userData.token, authSecret)
+                //validando se ainda está válido
+                if(new Date(token.exp * 1000) > new Date()) {
+                    return res.send(true)
+                }
+            }
+        } catch(e) {
+            // problema com o token - pode ser pq o authsecret que vazou... 
+            //mesmo vc mudando o authsecret, vai cair aqui se alguém usar o antigo
+        }
+
+        res.send(false)
+    }
 
 
 
