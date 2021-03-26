@@ -63,12 +63,12 @@ export default {
   position: absolute;
   right: 0px;
   background-color: #f9f9f9;
-  min-width: 250px;
+  min-width: 210px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  padding: 20px 15px;
   z-index: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   visibility: hidden;
   opacity: 0;
