@@ -15,11 +15,22 @@ export default {
 
 <style>
 .page-title h1 {
-  margin: 0px;
+  font-size: 14px;
+  color: #212121;
+  margin-top: 5px;
 }
 .page-title h2 {
   color: #777;
-  margin-top: 5px;
-  font-size: 1.3rem;
+  margin-top: 10px;
+  font-size: 0.7rem;
+}
+
+hr {
+  margin: 5px 0px;
+}
+
+.fa {
+  color: #5b616a;
+  font-size: 18px;
 }
 </style>
