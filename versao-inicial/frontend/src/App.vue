@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header title="Projeto Final - Web Moderno" :hideToggle="false"/>
     <Menu />
     <Content />
     <Footer />
