@@ -1,6 +1,6 @@
 <template>
   <div class="admin-pages">
-    <PageTitle icon="fa fa-cogs" main="/ Settings" 
+    <PageTitle icon="fa fa-cogs" main=" / Settings" 
         sub="Register, Update & more..."
     />
   </div>

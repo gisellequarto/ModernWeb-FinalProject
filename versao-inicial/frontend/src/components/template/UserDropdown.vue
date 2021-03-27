@@ -8,12 +8,10 @@
       <i class="fa fa-angle-down"></i>
     </div>
     <div class="user-dropdown-content">
-      <!-- <router-link to="/admin" v-if="user.admin"> -->
-      <a href class="settings">
-        <i class="fa fa-cogs"></i>
-        <span>SETTINGS</span>
-      </a>
-      <!--  </router-link> -->
+      <router-link to="/admin" class="settings">
+          <i class="fa fa-cogs"></i>
+          <span>SETTINGS</span>
+      </router-link>
       <a href class="logout">
         <i class="fa fa-sign-out"></i>
         <span>LOGOUT</span>
@@ -93,7 +91,7 @@ export default {
   box-shadow: 0 0 1em rgb(117, 115, 115);
 }
 
-.settings{
+.settings {
   background-color: #e5f0f8;
   color: #205493;
   text-align: center;
