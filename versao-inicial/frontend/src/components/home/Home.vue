@@ -3,13 +3,13 @@
     <PageTitle icon="fa fa-home" main=" / Dashboard"
           sub="Knowledge Source" />
     <div class="stats">
-            <Stat title="Categories" :value="stat.categories"
+            <Stat title="CATEGORIES" :value="stat.categories"
                 icon="fa fa-pie-chart" color="linear-gradient(240deg, #ff7295 0%, #fe875d 100%);"
                 src="https://www.primefaces.org/california/javax.faces.resource/images/icon-sales.png.xhtml?ln=california-layout" />
-            <Stat title="Articles" :value="stat.articles"
+            <Stat title="ARTICLES" :value="stat.articles"
                 icon="fa fa-bar-chart" color="linear-gradient(240deg, #00aadf 0%, #0071bc 100%);"
                 src= "https://www.primefaces.org/california/javax.faces.resource/images/icon-views.png.xhtml?ln=california-layout" />
-            <Stat title="Users" :value="stat.users"
+            <Stat title="USERS" :value="stat.users"
                 icon="fa fa-line-chart" color="linear-gradient(240deg, #4b7ecf 0%, #8e70ee 100%);"
                 src="https://www.primefaces.org/california/javax.faces.resource/images/icon-users.png.xhtml?ln=california-layout" />
         </div>

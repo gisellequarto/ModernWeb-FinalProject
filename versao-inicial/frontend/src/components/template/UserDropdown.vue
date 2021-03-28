@@ -9,12 +9,12 @@
     </div>
     <div class="user-dropdown-content">
       <router-link to="/admin" class="settings">
-          <i class="fa fa-cogs"></i>
-          <span>SETTINGS</span>
+        <i class="fa fa-cogs"></i>
+        <span class="option">SETTINGS</span>
       </router-link>
       <a href class="logout">
         <i class="fa fa-sign-out"></i>
-        <span>LOGOUT</span>
+        <span class="option">LOGOUT</span>
       </a>
     </div>
   </div>
@@ -36,6 +36,7 @@ export default {
   position: relative;
   height: 100%;
 }
+
 .user-button {
   display: flex;
   align-items: center;
@@ -44,11 +45,9 @@ export default {
   height: 100%;
   padding: 0px 20px;
 }
-
 .user-dropdown:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-
 .user-dropdown-img {
   margin: 0px 10px;
 }
@@ -136,7 +135,7 @@ a > i.fa-sign-out {
   list-style-type: disc;
 }
 
-span {
+.option {
   display: block;
   font-size: 12px;
   font-weight: 600;

@@ -26,8 +26,6 @@ export default {
 <style>
 .categories {
   font-size: 14px;
-  color: #212121;
-  -webkit-font-smoothing: antialiased;
   float: left;
   box-sizing: border-box;
   padding: 0.5em;
