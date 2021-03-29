@@ -6,7 +6,7 @@
       <div class="stat-value">
         <strong>{{ value }}</strong>
       </div>
-      <img :src="src"/>
+      <img class="img-content" :src="src" />
     </div>
   </div>
 </template>
@@ -58,10 +58,7 @@ export default {
 div > i {
   color: #ffffff;
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
   text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  float: right;
   font-size: 21px;
   position: absolute;
   top: 10px;
@@ -69,7 +66,6 @@ div > i {
 }
 
 .stat-value {
-  -webkit-font-smoothing: antialiased;
   color: #ffffff;
   line-height: 31px;
   font-size: 24px;
@@ -77,15 +73,12 @@ div > i {
   margin-bottom: 8px;
 }
 
-img{
-    font-size: 14px;
-    -webkit-font-smoothing: antialiased;
-    color: #ffffff;
-    position: absolute;
-    right: 0;
-    width: 90px;
-    bottom: 0;
+.img-content {
+  font-size: 14px;
+  color: #ffffff;
+  position: absolute;
+  right: 0;
+  width: 90px;
+  bottom: 0;
 }
-
-
 </style>

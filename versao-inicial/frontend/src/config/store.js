@@ -9,7 +9,7 @@ export default new Vuex.Store({
         isMenuVisible: false,
         user: {
             name: 'User Mock',
-            email: 'mock@email.com'
+            email: 'somebody@somewhere.com'
         }
     },
 

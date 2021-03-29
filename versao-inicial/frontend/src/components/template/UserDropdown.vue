@@ -3,7 +3,7 @@
     <div class="user-button">
       <span class="d-none d-sm-block">{{ user.name }}</span>
       <div class="user-dropdown-img">
-        <Gravatar :email="user.email" alt="User" />
+        <Gravatar class="avatar" :email="user.email" alt="User" />
       </div>
       <i class="fa fa-angle-down"></i>
     </div>
@@ -12,10 +12,10 @@
         <i class="fa fa-cogs"></i>
         <span class="option">SETTINGS</span>
       </router-link>
-      <a href class="logout">
+      <router-link to="/" class="logout">
         <i class="fa fa-sign-out"></i>
         <span class="option">LOGOUT</span>
-      </a>
+      </router-link>
     </div>
   </div>
 </template>
@@ -50,8 +50,10 @@ export default {
 .user-dropdown-img {
   margin: 0px 10px;
 }
-.user-dropdown-img > img {
+
+.user-dropdown-img > .avatar {
   max-height: 37px;
+  max-width: 30px;
   border-radius: 5px;
 }
 
@@ -114,7 +116,6 @@ export default {
   box-sizing: border-box;
   padding: 0.2em;
   display: block;
-  list-style-type: disc;
   font-size: 14px;
   padding: 0px;
 }
@@ -123,7 +124,6 @@ a > i.fa-cogs {
   display: inline-block;
   color: #205493;
   text-align: center;
-  list-style-type: disc;
 }
 
 a > i.fa-sign-out {
@@ -131,11 +131,10 @@ a > i.fa-sign-out {
   display: inline-block;
   color: #2e8540;
   text-align: center;
-  list-style-type: disc;
 }
 
 .option {
-  display: block;
+  display: flex;
   font-size: 12px;
   font-weight: 600;
   text-align: center;
