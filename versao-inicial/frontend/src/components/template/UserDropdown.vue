@@ -36,7 +36,6 @@ export default {
   position: relative;
   height: 100%;
 }
-
 .user-button {
   display: flex;
   align-items: center;
