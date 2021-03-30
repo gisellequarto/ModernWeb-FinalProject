@@ -2,11 +2,11 @@
     <div class="article-admin">
         <b-form>
             <input id="article-id" type="hidden" v-model="article.id" />
-            <b-form-group label="Name:" label-for="article-name">
+            <b-form-group label="Title:" label-for="article-name">
                 <b-form-input id="article-name" type="text"
                     v-model="article.name" required
                     :readonly="mode === 'remove'"
-                    placeholder="Enter the Article´s Name" />
+                    placeholder="Enter the Article´s Title" />
             </b-form-group>
             <b-form-group label="Description" label-for="article-description">
                 <b-form-input id="article-description" type="text"
@@ -36,14 +36,14 @@
                     placeholder="Article´s Content" />
             </b-form-group>
             <b-button variant="primary" v-if="mode === 'save'"
-                @click="save">Salve</b-button>
+                @click="save">Save</b-button>
             <b-button variant="danger" v-if="mode === 'remove'"
                 @click="remove">Delete</b-button>
             <b-button class="ml-2" @click="reset">Cancel</b-button>
         </b-form>
         <hr>
         <b-table hover striped :items="articles" :fields="fields">
-            <template slot="actions" slot-scope="data">
+            <template slot="cell(actions)" slot-scope="data">
                 <b-button variant="warning" @click="loadArticle(data.item)" class="mr-2">
                     <i class="fa fa-pencil"></i>
                 </b-button>
@@ -75,7 +75,7 @@ export default {
             count: 0,
             fields: [
                 { key: 'id', label: 'Code', sortable: true },
-                { key: 'name', label: 'Name', sortable: true },
+                { key: 'name', label: 'Title', sortable: true },
                 { key: 'description', label: 'Description', sortable: true },
                 { key: 'actions', label: 'Actions' }
             ]

@@ -8,13 +8,13 @@
     <div class="admin-tab">
       <b-card no-body>
         <b-tabs card>
-          <b-tab title="Artigos" active>
+          <b-tab title="Articles" active>
             <ArticleAdmin />
           </b-tab>
-          <b-tab title="Categorias">
+          <b-tab title="Categories">
             <CategoryAdmin />
           </b-tab>
-          <b-tab title="Usuários">
+          <b-tab title="Users">
             <UserAdmin />
           </b-tab>
         </b-tabs>
