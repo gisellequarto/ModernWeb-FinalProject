@@ -64,22 +64,22 @@
       <b-row>
         <b-col xs="12">
           <b-button variant="primary" v-if="mode === 'save'" @click="save"
-            >Salvar</b-button
+            >Save</b-button
           >
           <b-button variant="danger" v-if="mode === 'remove'" @click="remove"
-            >Excluir</b-button
+            >Delete</b-button
           >
-          <b-button class="ml-2" @click="reset">Cancelar</b-button>
+          <b-button class="ml-2" @click="reset">Cancel</b-button>
         </b-col>
       </b-row>
     </b-form>
     <hr />
     <b-table hover striped :items="users" :fields="fields">
-      <template slot="actions" slot-scope="data">
-        <b-button variant="warning" @click="loadUser(data.item)" class="mr-2">
+      <template slot="cell(actions)" slot-scope="data">
+        <b-button pill variant="warning" @click="loadUser(data.item)" class="mr-2" style="background-color: #F9C642;">
           <i class="fa fa-pencil"></i>
         </b-button>
-        <b-button variant="danger" @click="loadUser(data.item, 'remove')">
+        <b-button pill variant="danger" @click="loadUser(data.item, 'remove')">
           <i class="fa fa-trash"></i>
         </b-button>
       </template>

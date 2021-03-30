@@ -39,4 +39,13 @@ export default {
 .admin-tab{
   margin-right: 20px;
 }
+
+.fa-pencil{
+  color: white;
+}
+
+.fa-trash{
+  color: white;
+}
+
 </style>
