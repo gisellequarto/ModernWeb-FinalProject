@@ -36,5 +36,7 @@ export default {
 </script>
 
 <style>
-
+.admin-tab{
+  margin-right: 20px;
+}
 </style>
