@@ -1,10 +1,12 @@
 <template>
-  
+  <div class="user-admin">
+    <h1>User Admin Content</h1>
+  </div>
 </template>
 
 <script>
 export default {
-
+  name: "UserAdmin",
 }
 </script>
 
