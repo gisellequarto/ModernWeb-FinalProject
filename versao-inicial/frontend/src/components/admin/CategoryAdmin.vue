@@ -8,6 +8,7 @@
                     :readonly="mode === 'remove'"
                     placeholder="Enter the Category..." />
             </b-form-group>
+
             <b-form-group label="Main Category:" label-for="category-parentId">
                 <b-form-select v-if="mode === 'save'"
                     id="category-parentId"
@@ -17,6 +18,7 @@
                     v-model="category.path"
                     readonly />
             </b-form-group>
+
             <b-button variant="primary" v-if="mode === 'save'"
                 @click="save">Save</b-button>
             <b-button variant="danger" v-if="mode === 'remove'"
@@ -24,6 +26,7 @@
             <b-button class="ml-2" @click="reset">Cancel</b-button>
         </b-form>
         <hr>
+        
         <b-table hover striped :items="categories" :fields="fields">
             <template slot="cell(actions)" slot-scope="data">
                 <b-button pill variant="warning" @click="loadCategory(data.item)" class="mr-2">
