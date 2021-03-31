@@ -37,7 +37,7 @@ export default {
 
 <style>
 .admin-tab{
-  margin-right: 20px;
+  margin: 0px 20px 20px 20px;
 }
 
 .fa-pencil{

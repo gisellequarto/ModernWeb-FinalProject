@@ -13,6 +13,11 @@
                 icon="fa fa-line-chart" color="linear-gradient(240deg, #4b7ecf 0%, #8e70ee 100%);"
                 src="https://www.primefaces.org/california/javax.faces.resource/images/icon-users.png.xhtml?ln=california-layout" />
         </div>
+        <div class="highlights">
+        <h1>Highlights:</h1>
+        <hr>
+
+        </div>
   </div>
 </template>
 
@@ -43,4 +48,11 @@ export default {
 </script>
 
 <style>
+.stats {
+  margin: 0px 20px 20px 20px;
+}
+
+.highlights{
+  margin: 0px 20px 20px 20px;
+}
 </style>
