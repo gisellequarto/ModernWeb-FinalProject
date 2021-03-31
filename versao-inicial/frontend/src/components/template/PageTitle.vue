@@ -1,6 +1,6 @@
 <template>
   <div class="page-title">
-    <h1><i v-if="icon" :class="icon"></i> {{ main }}</h1>
+    <h1><i class="icon-title" v-if="icon" :class="icon"></i> {{ main }}</h1>
     <h2>{{ sub }}</h2>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
   font-size: 0.9rem;
 }
 
-.fa {
+.icon-title {
   color: #5b616a;
   font-size: 20px;
 }
