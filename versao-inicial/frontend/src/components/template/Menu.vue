@@ -2,8 +2,7 @@
   <aside class="menu" v-show="isMenuVisible">
     <div class="menu-filter">
       <i class="fa fa-search fa-lg"></i>
-      <input
-        type="text"
+      <input type="text"
         placeholder="Type to filter..."
         v-model="treeFilter"
         class="filter-field"
@@ -44,10 +43,7 @@ export default {
       return axios.get(url).then((res) => res.data);
     },
     onNodeSelect(node) {
-      this.$router.push({
-        name: "articlesByCategory",
-        params: { id: node.id },
-      });
+      this.$router.push({name: "articlesByCategory", params: { id: node.id },});
       if (this.$mq === "xs" || this.$mq === "sm") {
         this.$store.commit("toggleMenu", false);
       }
@@ -107,7 +103,7 @@ export default {
     }
     .tree-filter-empty {
         color: black;
-        font-size: 1.3rem;
+        font-size: 0.8rem;
         margin-left: 20px;
     }
 </style>
