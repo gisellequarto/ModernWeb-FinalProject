@@ -1,8 +1,8 @@
 <template>
-  <div id="app" :class="{ 'hide-menu': !isMenuVisible || user }">
+  <div id="app" :class="{ 'hide-menu': !isMenuVisible }">
     <Header title="Final Project- Modern Web" 
-        :hideToggle="!user"
-        :hideUserDropdown="!user" />
+        :hideToggle="false"
+        :hideUserDropdown="false" />
     <Menu v-if="user"/>
     <Content />
     <Footer />

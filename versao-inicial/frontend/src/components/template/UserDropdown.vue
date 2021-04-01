@@ -9,13 +9,13 @@
     </div>
     <div class="user-dropdown-content">
       <router-link to="/admin" class="settings">
-        <i class="fa fa-cogs"></i>
+        <i class="settings-icon fa fa-cogs"></i>
         <span class="option">SETTINGS</span>
       </router-link>
-      <router-link to="/" class="logout">
-        <i class="fa fa-sign-out"></i>
+      <a href @click.prevent="logout" class="logout">
+        <i class="logout-icon fa fa-sign-out"></i>
         <span class="option">LOGOUT</span>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>
@@ -23,12 +23,19 @@
 <script>
 import { mapState } from "vuex";
 import Gravatar from "vue-gravatar";
-import { userKey } from '@/global';
+import { userKey } from "@/global";
 
 export default {
   name: "UserDropdown",
   components: { Gravatar },
   computed: mapState(["user"]),
+  methods: {
+    logout() {
+      localStorage.removeItem(userKey);
+      this.$store.commit("setUser", null);
+      this.$router.push({ name: "auth" });
+    },
+  },
 };
 </script>
 
@@ -120,14 +127,15 @@ export default {
   font-size: 14px;
   padding: 0px;
 }
-a > i.fa-cogs {
+
+.settings-icon {
   font-size: 30px;
   display: inline-block;
   color: #205493;
   text-align: center;
 }
 
-a > i.fa-sign-out {
+.logout-icon {
   font-size: 30px;
   display: inline-block;
   color: #2e8540;

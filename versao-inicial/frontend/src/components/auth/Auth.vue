@@ -26,6 +26,8 @@
 <script>
 import { baseApiUrl, showError, userKey } from "@/global";
 import axios from "axios";
+
+
 export default {
   name: "Auth",
   data: function () {
