@@ -8,7 +8,7 @@
       <i class="fa fa-angle-down"></i>
     </div>
     <div class="user-dropdown-content">
-      <router-link to="/admin" class="settings">
+      <router-link to="/admin" class="settings" v-if="user.admin">
         <i class="settings-icon fa fa-cogs"></i>
         <span class="option">SETTINGS</span>
       </router-link>
@@ -69,12 +69,13 @@ export default {
   position: absolute;
   right: 0px;
   background-color: #f9f9f9;
-  min-width: 210px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 20px 15px;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
   flex-wrap: wrap;
   visibility: hidden;
   opacity: 0;
@@ -112,6 +113,7 @@ export default {
   list-style-type: disc;
   font-size: 14px;
   padding: 0px;
+  margin-bottom: 20px;
 }
 
 .logout {
