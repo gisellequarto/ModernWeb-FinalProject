@@ -63,11 +63,13 @@ export default {
         flex-direction: column;
         flex-wrap: wrap;
     }
+    
     .menu a,
     .menu a:hover {
         color: #fff;
         text-decoration: none;
     }
+    
     .menu .tree-node.selected > .tree-content,
     .menu .tree-node .tree-content:hover {
         background-color: rgba(16, 68, 182, 0.075);
